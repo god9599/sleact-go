@@ -12,6 +12,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import * as ormconfig from '../ormconfig';
 import { Users } from './entities/user.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { Users } from './entities/user.entity';
     WorkspacesModule,
     ChannelsModule,
     DmsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
