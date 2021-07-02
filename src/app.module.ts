@@ -11,11 +11,13 @@ import { DmsModule } from './dms/dms.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import * as ormconfig from '../ormconfig';
+import { Users } from './entities/user.entity';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot(ormconfig),
+    TypeOrmModule.forFeature([Users]),
     MorganModule,
     UsersModule,
     WorkspacesModule,
