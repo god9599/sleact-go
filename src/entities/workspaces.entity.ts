@@ -15,15 +15,35 @@ import {
 import { DMs } from './dms.entity';
 import { Mentions } from './mentions.entity';
 import { WorkspaceMembers } from './workspaceMembers.entity';
+import { IsNotEmpty, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({ schema: 'sleact', name: 'workspaces' })
 export class Workspaces {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({
+    example: '슬리액트',
+    description: '워크스페이스 이름',
+  })
   @Column('varchar', { name: 'name', unique: true, length: 30 })
-  name: string;
+  private _name: string;
+  public get name(): string {
+    return this._name;
+  }
+  public set name(value: string) {
+    this._name = value;
+  }
 
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty({
+    example: 'sleact',
+    description: 'url 주소',
+  })
   @Column('varchar', { name: 'url', unique: true, length: 30 })
   url: string;
 
