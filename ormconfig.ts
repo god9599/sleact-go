@@ -32,7 +32,7 @@ const config: TypeOrmModuleOptions = {
   autoLoadEntities: true,
   charset: 'utf8mb4',
   synchronize: false,
-  logging: true,
+  logging: process.env.NODE_ENV !== 'production',
   keepConnectionAlive: true,
 };
 
