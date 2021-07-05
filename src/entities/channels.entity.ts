@@ -13,12 +13,17 @@ import {
 } from 'typeorm';
 import { Users } from './user.entity';
 import { Workspaces } from './workspaces.entity';
+import { ApiProperty } from '@nestjs/swagger';
 
 @Entity({ schema: 'sleact' })
 export class Channels {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
+  @ApiProperty({
+    example: '수다방',
+    description: '체널명',
+  })
   @Column('varchar', { name: 'name', length: 30 })
   name: string;
 
