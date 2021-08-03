@@ -13,6 +13,7 @@ import { Connection } from 'typeorm';
 import * as ormconfig from '../ormconfig';
 import { Users } from './entities/user.entity';
 import { AuthModule } from './auth/auth.module';
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { AuthModule } from './auth/auth.module';
     ChannelsModule,
     DmsModule,
     AuthModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [
