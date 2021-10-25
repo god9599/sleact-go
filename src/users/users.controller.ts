@@ -38,12 +38,12 @@ export class UsersController {
     return user || false;
   }
 
-  @UseGuards(new NotLoggedInGuard())
-  @ApiOperation({ summary: '회원가입' })
-  @Post()
-  async join(@Body() body: JoinRequestDto) {
-    await this.usersService.join(body.email, body.nickname, body.password);
-  }
+  // @UseGuards(new NotLoggedInGuard())
+  // @ApiOperation({ summary: '회원가입' })
+  // @Post()
+  // async join(@Body() body: JoinRequestDto) {
+  //   await this.usersService.join(body.email, body.nickname, body.password);
+  // }
 
   @ApiOkResponse({
     type: UserDto,

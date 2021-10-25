@@ -7,7 +7,6 @@ import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { WorkspacesModule } from './workspaces/workspaces.module';
 import { ChannelsModule } from './channels/channels.module';
-import { DmsModule } from './dms/dms.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import * as ormconfig from '../ormconfig';
@@ -24,7 +23,6 @@ import { EventsModule } from './events/events.module';
     UsersModule,
     WorkspacesModule,
     ChannelsModule,
-    DmsModule,
     AuthModule,
     EventsModule,
   ],
